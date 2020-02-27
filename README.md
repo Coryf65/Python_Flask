@@ -44,7 +44,7 @@ Setup for the Dev enviroment to auto update! by telling Flask we are developing 
 ```bash
 $ export FLASK_ENV=development
  ```
-Then re-run
-```bash
-$ flask run
- ```
+ 
+ you can see our enviroment set = development upon running Flask
+![tada!](/_images/flask_dev_env.PNG)
+
