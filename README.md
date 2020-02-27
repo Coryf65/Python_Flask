@@ -48,3 +48,4 @@ $ export FLASK_ENV=development
  you can see our enviroment set = development upon running Flask
 ![tada!](/_images/flask_dev_env.PNG)
 
+Now we can code and refresh our browser to see our changes!
