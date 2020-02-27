@@ -61,3 +61,6 @@ def redirect_to_url(code):
             if code in urls.keys():
                 if 'url' in urls[code].keys():
                     return redirect(urls[code]['url'])
+    else: 
+        #see the file
+        return redirect(url_for('static', filename='user_files/' + urls[code]['file']))
