@@ -40,7 +40,7 @@ def your_url():
             # a file
             f = request.files['file']
             full_name = request.form['code'] + secure_filename(f.filename)
-            f.save('C:/Users/Cory/Documents/_Code/Python_Flask/' + full_name)
+            f.save('C:/Users/Cory/Documents/_Code/Python_Flask/static/user_files/' + full_name)
             # now update our json file
             urls[request.form['code']] = {'file':full_name}
 
