@@ -15,4 +15,15 @@ Learning Flask (Flask is a Python framework for building lightweight and dynamic
   - Extremely limited
   - No database help
   
+ ## Setup
  
+ use pip to install Flask module
+ 
+ `pip install flask`
+ 
+ Running Flask
+ ```bash
+$ export FLASK_APP=hello
+ ```
+ 
+Use `/` for paths
