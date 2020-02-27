@@ -31,7 +31,7 @@ $ export FLASK_APP=hello
  ```
  
  running Flask
-  ```bash
+```bash
 $ flask run
  ```
 
@@ -40,4 +40,8 @@ Open a web Browser enter
 
 ![tada!](/_images/first_flask_site.PNG)
 
+Setup for the Dev enviroment to auto update! by telling Flask we are developing it yet.
+```bash
+$ export FLASK_ENV=development
+ ```
 
