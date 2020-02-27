@@ -23,7 +23,7 @@ Use `/` for paths
  $ pip install flask
  ```
  
- ### Running your WebServer
+ ### Running your WebServer (use Bash terminal)
  
  Point Flask to app Start
  ```bash
