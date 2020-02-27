@@ -44,4 +44,7 @@ Setup for the Dev enviroment to auto update! by telling Flask we are developing 
 ```bash
 $ export FLASK_ENV=development
  ```
-
+Then re-run
+```bash
+$ flask run
+ ```
