@@ -2,6 +2,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os.path
+# tool to chekc if a file is safe to upload
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 # if in production you want to generate a very long random key
@@ -30,9 +32,18 @@ def your_url():
             flash('That shortname has already been taken, Please select another')
             return redirect(url_for('home'))
 
-        # specifying the KEY/Name = code, and Value pair
-        urls[request.form['code']] = {'url':request.form['url']}
-
+        # now we check if it is a file or url
+        if 'url' in request.form.keys():
+            # a url
+            urls[request.form['code']] = {'url':request.form['url']}
+        else:
+            # a file
+            f = request.files['file']
+            full_name = request.form['code'] + secure_filename(f.filename)
+            f.save('C:/Users/Cory/Documents/_Code/Python_Flask/' + full_name)
+            # now update our json file
+            urls[request.form['code']] = {'file':full_name}
+            
         # saving to JSON file
         with open('urls.json', 'w') as url_file:
             json.dump(urls, url_file)
