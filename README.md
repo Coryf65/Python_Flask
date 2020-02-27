@@ -1,6 +1,7 @@
 # Python_Flask
 Learning Flask (Flask is a Python framework for building lightweight and dynamic web applications)
 
+Use `/` for paths
 
 ## Pros and Cons of Flask
 
@@ -18,12 +19,19 @@ Learning Flask (Flask is a Python framework for building lightweight and dynamic
  ## Setup
  
  use pip to install Flask module
+ ```bash
+ $ pip install flask
+ ```
  
- `pip install flask`
+ ### Running your WebServer
  
- Running Flask
+ Point Flask to app Start
  ```bash
 $ export FLASK_APP=hello
  ```
  
-Use `/` for paths
+ running Flask
+  ```bash
+$ flask run
+ ```
+
