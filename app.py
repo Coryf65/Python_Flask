@@ -1,6 +1,7 @@
 # This file creates the flask app
 from flask import Flask, render_template, request, redirect, url_for
 import json
+import os.path
 
 app = Flask(__name__)
 
@@ -16,6 +17,15 @@ def your_url():
     if request.method == 'POST':
         # creating a Dictionary to store info
         urls = {}
+
+        # checking if we already have this in our file
+        if os.path.exists('urls.json'):
+            # then we want to open it
+            with open('urls.json') as urls_file:
+                urls = json.load(urls_file)
+        if request.form['code'] in urls.keys():
+            redirect(url_for('home'))
+
         # specifying the KEY/Name = code, and Value pair
         urls[request.form['code']] = {'url':request.form['url']}
 
