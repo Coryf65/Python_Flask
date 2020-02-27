@@ -31,11 +31,20 @@ $ export FLASK_APP=hello
  ```
  
  running Flask
-  ```bash
+```bash
 $ flask run
  ```
 
 Open a web Browser enter
 `http://127.0.0.1:5000/`
 
-tada!
+![tada!](/_images/first_flask_site.PNG)
+
+Setup for the Dev enviroment to auto update! by telling Flask we are developing it yet.
+```bash
+$ export FLASK_ENV=development
+ ```
+ 
+ you can see our enviroment set = development upon running Flask
+![tada!](/_images/flask_dev_env.PNG)
+
