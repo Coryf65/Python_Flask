@@ -1,5 +1,5 @@
 # This file creates the flask app
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -20,5 +20,9 @@ def your_url():
     if request.method == 'POST':
         return render_template('your_url.html', code=request.form['code'])
     else:
-        return 'This is not Valid'
+        # doing this we could get to the home page, but still see different text in the url
+        #return render_template('home.html')
+
+        #so instead we will do a simple redirect
+        return redirect('/')
 
