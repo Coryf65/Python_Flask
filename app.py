@@ -12,3 +12,10 @@ app = Flask(__name__)
 
 def home():
     return 'Hello Flask!'
+
+    # adding another route
+@app.route('/about')
+
+# function names and routes don't HAVE to match
+def about():
+    return 'This is a URL shortener'
