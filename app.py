@@ -7,7 +7,9 @@ app = Flask(__name__)
 @app.route('/')
 
 def home():
-    return 'Hello Flask!'
+    # now instead of using strings
+    # we are going to user our new template
+    return render_template('home.html')
 
 # adding another route
 @app.route('/about')
