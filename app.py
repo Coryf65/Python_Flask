@@ -1,5 +1,5 @@
 # This file creates the flask app
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -15,3 +15,4 @@ def home():
 # function names and routes don't HAVE to match
 def about():
     return 'This is a URL shortener'
+
