@@ -6,10 +6,9 @@ app = Flask(__name__)
 # creating a route
 @app.route('/')
 
-def home():
-    # now instead of using strings
+def home():    
     # we are going to user our new template
-    return render_template('home.html')
+    return render_template('home.html', name='Cory')
 
 # adding another route
 @app.route('/about')
