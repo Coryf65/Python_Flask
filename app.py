@@ -1,9 +1,11 @@
 # This file creates the flask app
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os.path
 
 app = Flask(__name__)
+# if in production you want to generate a very long random key
+app.secret_key = 'hjas83jasnuka9n338793jsa83747239ejekjnwuq938h'
 
 # creating a route
 @app.route('/')
@@ -24,7 +26,9 @@ def your_url():
             with open('urls.json') as urls_file:
                 urls = json.load(urls_file)
         if request.form['code'] in urls.keys():
-            redirect(url_for('home'))
+            # displaying a message
+            flash('That shortname has already been taken, Please select another')
+            return redirect(url_for('home'))
 
         # specifying the KEY/Name = code, and Value pair
         urls[request.form['code']] = {'url':request.form['url']}
