@@ -35,3 +35,7 @@ $ export FLASK_APP=hello
 $ flask run
  ```
 
+Open a web Browser enter
+`http://127.0.0.1:5000/`
+
+tada!
