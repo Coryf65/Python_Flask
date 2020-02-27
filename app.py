@@ -43,7 +43,7 @@ def your_url():
             f.save('C:/Users/Cory/Documents/_Code/Python_Flask/' + full_name)
             # now update our json file
             urls[request.form['code']] = {'file':full_name}
-            
+
         # saving to JSON file
         with open('urls.json', 'w') as url_file:
             json.dump(urls, url_file)
@@ -51,3 +51,13 @@ def your_url():
     else:        
         return redirect(url_for('home'))
 
+# look for any string in the url 
+@app.route('/<string:code>')
+
+def redirect_to_url(code):
+    if os.path.exists('urls.json'):
+        with open('urls.json') as urls_file:
+            urls = json.load(urls_file)
+            if code in urls.keys():
+                if 'url' in urls[code].keys():
+                    return redirect(urls[code]['url'])
