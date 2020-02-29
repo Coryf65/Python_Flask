@@ -27,7 +27,7 @@ def your_url():
         if request.form['code'] in urls.keys():
             # displaying a message
             flash('That shortname has already been taken, Please select another')
-            return redirect(url_for('home'))
+            return redirect(url_for('urlshort.home'))
 
         # now we check if it is a file or url
         if 'url' in request.form.keys():
@@ -37,7 +37,7 @@ def your_url():
             # a file
             f = request.files['file']
             full_name = request.form['code'] + secure_filename(f.filename)
-            f.save('C:/Users/Cory/Documents/_Code/Python_Flask/static/user_files/' + full_name)
+            f.save('C:/Users/Cory/Documents/_Code/Python_Flask/urlshort/static/user_files/' + full_name)
             # now update our json file
             urls[request.form['code']] = {'file':full_name}
 
@@ -48,7 +48,7 @@ def your_url():
             session[request.form['code']] = True
         return render_template('your_url.html', code=request.form['code'])
     else:        
-        return redirect(url_for('home'))
+        return redirect(url_for('urlshort.home'))
 
 # look for any string in the url 
 @bp.route('/<string:code>')
