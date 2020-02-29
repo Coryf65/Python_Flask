@@ -1,9 +1,10 @@
 # This file creates the flask app
-from flask import Flask, render_template, request, redirect, url_for, flash, abort
+from flask import Flask, render_template, request, redirect, url_for, flash, abort, session
 import json
 import os.path
-# tool to chekc if a file is safe to upload
+# tool to check if a file is safe to upload
 from werkzeug.utils import secure_filename
+
 
 app = Flask(__name__)
 # if in production you want to generate a very long random key
@@ -13,7 +14,7 @@ app.secret_key = 'hjas83jasnuka9n338793jsa83747239ejekjnwuq938h'
 @app.route('/')
 def home():    
     # we are going to user our new template
-    return render_template('home.html')
+    return render_template('home.html', codes=session.keys())
 
 @app.route('/your-url', methods=['GET', 'POST'])
 def your_url():
@@ -47,6 +48,8 @@ def your_url():
         # saving to JSON file
         with open('urls.json', 'w') as url_file:
             json.dump(urls, url_file)
+            # also want to store as a cookie
+            session[request.form['code']] = True
         return render_template('your_url.html', code=request.form['code'])
     else:        
         return redirect(url_for('home'))
