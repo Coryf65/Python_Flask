@@ -1,5 +1,5 @@
 # This file creates the flask app
-from flask import Flask, render_template, request, redirect, url_for, flash, abort, session
+from flask import Flask, render_template, request, redirect, url_for, flash, abort, session, jsonify
 import json
 import os.path
 # tool to check if a file is safe to upload
@@ -74,3 +74,10 @@ def redirect_to_url(code):
 
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+# creating an API based off the codes
+@app.route('/api')
+
+def session_api():
+    return jsonify(list(session.keys()))
+    
