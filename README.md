@@ -57,3 +57,15 @@ this will allow testing our application easier
  ```bash
  $ pip install pytest
  ```
+
+### Deploying
+
+1. install pip on the server
+
+2. export FLASK_APP=urlshort
+
+3. flask run
+
+4. testing to see flask run --host=0.0.0
+
+
