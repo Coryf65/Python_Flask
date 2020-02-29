@@ -1,5 +1,3 @@
-# setup the app
-
 import pytest 
 from urlshort import create_app
 
