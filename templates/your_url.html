@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>URL Shortener</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+{% extends 'base.html' %}
 
-</head>
-<body>
+{% block title %}URL for "{{ code }}"{% endblock %}
+
+{% block main %}
     <h1>
         Your URL
     </h1>
@@ -15,5 +10,4 @@
     <h2>
         {{ code }}
     </h2>
-</body>
-</html>
+{% endblock %}
