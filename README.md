@@ -68,4 +68,35 @@ this will allow testing our application easier
 
 4. testing to see flask run --host=0.0.0
 
+so instead of using flask we will be using 'gunicorn' "Green Unicorn"
+ ```bash
+ $ pip install gunicorn
+ ```
+Then onces it's installed run Gunicorn
+ ```bash
+ $ gunicorn "urlshort:create_app()" -b 0.0.0.0
+ ```
+now might run on port 8000
+
+Cntrl+c
+
+We want to use Nginx, if we do not have it already
+ ```bash
+ $ sudo apt install nginx
+ ```
+
+Checking if nginx is running 
+ ```bash
+ $ systemctl status nginx
+ ```
+to quit
+ ```bash
+ $ :q
+ ```
+ 
+if we get a Bad Gateway we would need to edit the config file for nginx
+
+### For More info on deployment 
+
+[Gunicorn](https://gunicorn.org/#deployment)
 
