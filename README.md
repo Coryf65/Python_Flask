@@ -49,3 +49,11 @@ $ export FLASK_ENV=development
 ![tada!](/_images/flask_dev_env.PNG)
 
 Now we can code and refresh our browser to see our changes!
+
+
+### Using pytest
+
+this will allow testing our application easier
+ ```bash
+ $ pip install pytest
+ ```
